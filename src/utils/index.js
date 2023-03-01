@@ -1,10 +1,17 @@
+const { existsSync } = require('fs')
 const { resolve } = require('path')
 const { runDir } = require('../constants/index.js')
 
 function getOptions() {
-  const opts = resolve(runDir, 'mock.config.js') || resolve(runDir, 'mock.config.cjs')
-    || require(resolve(runDir, 'package.json')) || undefined
-  const { mockPath, watch, port } = opts && require(opts)
+  function getOpts(path) {
+    const absPath = resolve(runDir, path)
+    if (!existsSync(absPath))
+      return null
+    return require(absPath)
+  }
+  const opts = getOpts('mock.config.js') || getOpts('mock.config.cjs')
+    || getOpts('package.json') || undefined
+  const { mockPath, watch, port } = opts
 
   return {
     mockPath,
