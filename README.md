@@ -29,7 +29,7 @@ pnpm add @winches/auto-mock -D
 ```
 
 ### Create a `mock.config.c?js` file set some config
-```json
+```js
 module.exports = {
   // default option value
   mockPath: '__mock__', // mock文件路径
