@@ -57,7 +57,7 @@ auto-mock -p 8080
 ### Create a file under the `__mock__` folder
 #### For instance
 ```
-└── your mockDir
+└── your mockPath（__mock__）
   │
   └──  hello
     │
