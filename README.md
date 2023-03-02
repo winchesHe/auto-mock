@@ -66,12 +66,13 @@ auto-mock -p 8080
 
 and the http request will be transform `http://<host>:<port>/hello/index`
 
-**index.js exports a function** it receive three parameters
+**index.js exports a function** it receive three parameters and the fn result is response
 
 #### For instance
 ```js
 // hello/index.js
 module.exports = function(req, query, body) {
+  // response result
   return {
     code: 0,
     msg: 'success',
