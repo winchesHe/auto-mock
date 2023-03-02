@@ -35,7 +35,11 @@ async function routes (fastify, options) {
   console.log();
 
   for (const item of mockList) {
-    fastify.get(item, async (request, reply) => {
+    newItem = item.replace(/\\/g, '\/')
+    fastify.get(newItem, async (request, reply) => {
+      return require(join(mockDir, `${item}.js`))(request, request.query, request.body)
+    })
+    fastify.post(newItem, async (request, reply) => {
       return require(join(mockDir, `${item}.js`))(request, request.query, request.body)
     })
   }
