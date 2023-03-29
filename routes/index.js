@@ -36,11 +36,20 @@ async function routes (fastify, options) {
 
   for (const item of mockList) {
     newItem = item.replace(/\\/g, '\/')
-    fastify.get(newItem, async (request, reply) => {
-      return require(join(mockDir, `${item}.js`))(request, request.query, request.body)
+    // 判断是否为动态路径
+    if (newItem.includes(':')) {
+      const path = newItem.replace(':', '/:')
+      return addRoutes(path, item)
+    }
+    addRoutes(newItem, item)
+  }
+
+  function addRoutes(url, name) {
+    fastify.get(url, async (request, reply) => {
+      return require(join(mockDir, `${name}.js`))(request, request.query, request.body)
     })
-    fastify.post(newItem, async (request, reply) => {
-      return require(join(mockDir, `${item}.js`))(request, request.query, request.body)
+    fastify.post(url, async (request, reply) => {
+      return require(join(mockDir, `${name}.js`))(request, request.query, request.body)
     })
   }
 }

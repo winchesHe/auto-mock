@@ -2,12 +2,16 @@
 
 约定式路由mock工具
 
-## ⭐️ feature
-✅ auto get mock route (自动获取mock路径)
+## ⭐️ Feature
+✅ Auto get mock route (自动获取mock路径)
 
 ✅ Hot Update 热更新支持（检测mock路径和配置文件）
 
-🤖 easy to get params（更简易的获取请求参数）
+✅ Dynamics routes 支持动态路由
+
+✅ Contractual routing 约定式路由（文件路径 -> 路由路径）
+
+🤖 Easy to get params（更简易的获取请求参数）
 
 ⚡ Faster response build with fastify（更快的响应速度）
 
@@ -21,7 +25,7 @@ pnpm add @winches/auto-mock -D
 ```
 
 ## Usage
-### add script
+### Add script
 ```json
 "scripts": {
   "mock": "auto-mock"
@@ -79,6 +83,29 @@ module.exports = function(req, query, body) {
     req,
     query,
     body
+  }
+}
+```
+### Dynamics Routes（动态路由）
+#### For instance
+```
+└── your mockPath（__mock__）
+  │
+  └──  hello
+    │
+    └──  test:id.js
+```
+the http request will be transform `http://<host>:<port>/hello/test:id`
+
+and when send a request `http://<...>/hello/test/1`
+```js
+// hello/test:id.js
+module.exports = function(req, query, body) {
+  // response result
+  return {
+    code: 0,
+    msg: 'success',
+    res: req.params // { id: 1 }
   }
 }
 ```
