@@ -39,7 +39,8 @@ async function routes (fastify, options) {
     // 判断是否为动态路径
     if (newItem.includes(':')) {
       const path = newItem.replace(':', '/:')
-      return addRoutes(path, item)
+      addRoutes(path, item)
+      continue
     }
     addRoutes(newItem, item)
   }
