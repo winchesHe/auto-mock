@@ -1,6 +1,6 @@
 {
   "name": "@winches/auto-mock",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "约定式路由的mock工具",
   "main": "dist/app.js",
   "directories": {
