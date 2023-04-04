@@ -10,7 +10,7 @@ function getOptions() {
     return require(absPath)
   }
   const opts = getOpts('mock.config.js') || getOpts('mock.config.cjs')
-    || getOpts('package.json') || undefined
+    || getOpts('package.json') || {}
   const { mockPath, watch, port } = opts
 
   return {
