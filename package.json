@@ -1,6 +1,6 @@
 {
   "name": "@winches/auto-mock",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "约定式路由的mock工具",
   "main": "dist/app.js",
   "directories": {
@@ -13,7 +13,8 @@
     "test": "tap \"test/**/*.test.js\"",
     "start": "node src/bin.js",
     "dev": "node src/bin.js -w",
-    "build": "tsup-node"
+    "build": "tsup-node",
+    "prepublish": "npm run build"
   },
   "keywords": [
     "mock",
@@ -28,6 +29,10 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/winchesHe/auto-mock"
   },
   "dependencies": {
     "@winches/utils": "^0.0.3",

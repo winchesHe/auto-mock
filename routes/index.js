@@ -37,8 +37,8 @@ async function routes (fastify, options) {
   for (const item of mockList) {
     newItem = item.replace(/\\/g, '\/')
     // 判断是否为动态路径
-    if (newItem.includes(':')) {
-      const path = newItem.replace(':', '/:')
+    if (newItem.includes('.dynamic')) {
+      const path = newItem.replace('.dynamic', '/:')
       addRoutes(path, item)
       continue
     }
