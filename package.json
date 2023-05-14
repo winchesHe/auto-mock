@@ -1,6 +1,6 @@
 {
   "name": "@winches/auto-mock",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "约定式路由的mock工具",
   "main": "dist/app.js",
   "directories": {
@@ -14,8 +14,8 @@
     "start": "node src/bin.js",
     "dev": "node src/bin.js -w",
     "build": "tsup-node",
-    "changlog": "npx conventional-changelog -p angular -i CHANGELOG.md -s --commit-path . && git add .",
-    "release": "bumpp --execute='npm run changlog'",
+    "changlog": "npx conventional-changelog -p angular -i CHANGELOG.md -s --commit-path .",
+    "release": "bumpp --execute='npm run changlog' --tag=false",
     "prepublish": "npm run build"
   },
   "keywords": [
