@@ -75,7 +75,7 @@ and the http request will be transform `http://<host>:<port>/hello/index`
 #### For instance
 ```js
 // hello/index.js
-module.exports = function(req, query, body) {
+module.exports = function (req, query, body) {
   // response result
   return {
     code: 0,
@@ -100,7 +100,7 @@ the http request will be transform `http://<host>:<port>/hello/test:id`
 and when send a request `http://<...>/hello/test/1`
 ```js
 // hello/test:id.js
-module.exports = function(req, query, body) {
+module.exports = function (req, query, body) {
   // response result
   return {
     code: 0,

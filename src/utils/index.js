@@ -1,5 +1,5 @@
-const { existsSync } = require('fs')
-const { resolve } = require('path')
+const { existsSync } = require('node:fs')
+const { resolve } = require('node:path')
 const { runDir } = require('../constants/index.js')
 
 function getOptions() {
@@ -16,10 +16,10 @@ function getOptions() {
   return {
     mockPath,
     watch,
-    port
+    port,
   }
 }
 
 module.exports = {
-  getOptions
+  getOptions,
 }

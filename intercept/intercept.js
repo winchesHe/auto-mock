@@ -1,7 +1,8 @@
+import { join } from 'node:path'
 import Mock from 'mockjs'
-import { join } from 'path'
 
 export async function interceptMock(mockList, mockDir) {
+  let newItem = ''
   for (const item of mockList) {
     newItem = item.replace(/\\/g, '\/')
     // 判断是否为动态路径

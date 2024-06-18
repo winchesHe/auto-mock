@@ -2,6 +2,20 @@
   "name": "@winches/auto-mock",
   "version": "0.1.2",
   "description": "约定式路由的mock工具",
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/winchesHe/auto-mock"
+  },
+  "keywords": [
+    "mock",
+    "auto-import",
+    "Contractual routing",
+    "mock 工具",
+    "自动获取本地mock路径",
+    "约定式mock路由"
+  ],
   "main": "dist/app.js",
   "directories": {
     "test": "test"
@@ -18,23 +32,9 @@
     "release": "bumpp --execute='npm run changlog' --all",
     "prepublish": "npm run build"
   },
-  "keywords": [
-    "mock",
-    "auto-import",
-    "Contractual routing",
-    "mock 工具",
-    "自动获取本地mock路径",
-    "约定式mock路由"
-  ],
-  "author": "",
-  "license": "ISC",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/winchesHe/auto-mock"
   },
   "dependencies": {
     "@winches/utils": "^0.0.3",
@@ -45,6 +45,9 @@
     "pino-pretty": "^10.0.0"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^0.42.1",
+    "eslint": "^8.5.0",
+    "eslint-plugin-unused-imports": "^4.0.0",
     "tap": "^16.1.0",
     "tsup": "^6.6.3"
   }

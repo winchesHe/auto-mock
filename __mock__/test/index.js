@@ -1,9 +1,9 @@
-module.exports = function(req, query, body) {
+module.exports = function (req, query, body) {
   return {
     code: 0,
     msg: '你号',
     req,
     query,
-    body
+    body,
   }
 }

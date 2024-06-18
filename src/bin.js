@@ -1,8 +1,7 @@
 #!/usr/bin/env node
+const { Command } = require('commander')
 const pkg = require('../package.json')
 const { start } = require('./command/index')
-const { Command } = require('commander')
-
 
 const program = new Command()
 program.version(pkg.version, '-v --version', '显示当前版本号')
